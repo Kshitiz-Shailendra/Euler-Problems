@@ -3,7 +3,11 @@ package com.learning.algo;
 import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * Easier doing HashSet way
+ * @author Kshitiz
+ *
+ */
 public class Q29DigitPowers {
 	
 	public int uniquePowers(int limit){
