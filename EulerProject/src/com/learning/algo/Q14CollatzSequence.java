@@ -6,7 +6,7 @@
  */
 package com.learning.algo;
 
-public class CollatzSequenceQ14 {
+public class Q14CollatzSequence {
 	
 	public long collatzSeq(long num){
 		
@@ -23,7 +23,7 @@ public class CollatzSequenceQ14 {
 	public static void main(String args[]){
 		
 		long start = System.currentTimeMillis();
-		CollatzSequenceQ14 seq = new CollatzSequenceQ14();
+		Q14CollatzSequence seq = new Q14CollatzSequence();
 		long [] arr = {0,0};//{num,count}
 		for(int i=1;(i<1000000) ; i++){
 			

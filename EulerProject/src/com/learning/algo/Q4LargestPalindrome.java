@@ -1,6 +1,6 @@
 package com.learning.algo;
 
-public class LargestPalindromeQ4 {
+public class Q4LargestPalindrome {
 
 	public int LargestPalindrome(){
 		
@@ -31,7 +31,7 @@ public class LargestPalindromeQ4 {
 	
 	public static void main(String[] args) {
 		
-		LargestPalindromeQ4 laQ4 = new LargestPalindromeQ4();
+		Q4LargestPalindrome laQ4 = new Q4LargestPalindrome();
 		System.out.println(laQ4.LargestPalindrome());
 	}
 

@@ -1,6 +1,6 @@
 package com.learning.algo;
 
-public class EvenFibonacciNosQ2 {
+public class Q2EvenFibonacciNos {
 
 	public int evenFibonacci(int num){
 		int sum = 0,a=0,b=1,c=a+b;
@@ -18,7 +18,7 @@ public class EvenFibonacciNosQ2 {
 	
 	public static void main(String[] args) {
 		
-		EvenFibonacciNosQ2 evenFib = new EvenFibonacciNosQ2();
+		Q2EvenFibonacciNos evenFib = new Q2EvenFibonacciNos();
 		System.out.println(evenFib.evenFibonacci(4000000));
 	}
 

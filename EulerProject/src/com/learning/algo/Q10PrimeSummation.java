@@ -1,6 +1,6 @@
 package com.learning.algo;
 
-public class PrimeSummationQ10 {
+public class Q10PrimeSummation {
 
 	public long sumPrimes(long num){
 		long sum=2;
@@ -55,7 +55,7 @@ public class PrimeSummationQ10 {
 	
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
-		PrimeSummationQ10 sum = new PrimeSummationQ10();
+		Q10PrimeSummation sum = new Q10PrimeSummation();
 		System.out.println(sum.primeSieve(2000000));
 		long stop = System.currentTimeMillis();
 		System.out.println("time "+(stop-start));

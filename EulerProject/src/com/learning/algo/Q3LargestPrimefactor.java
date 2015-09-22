@@ -8,7 +8,7 @@
 
 package com.learning.algo;
 
-public class LargestPrimefactorQ3 {
+public class Q3LargestPrimefactor {
 
 	public long findLargestPrimeFactor(long num){
 		
@@ -28,7 +28,7 @@ public class LargestPrimefactorQ3 {
 	
 	public static void main(String args[]){
 		long start = System.nanoTime();
-		LargestPrimefactorQ3 large = new LargestPrimefactorQ3();
+		Q3LargestPrimefactor large = new Q3LargestPrimefactor();
 		System.out.println(large.findLargestPrimeFactor(600851475143L));
 		long stop = System.nanoTime();
 		

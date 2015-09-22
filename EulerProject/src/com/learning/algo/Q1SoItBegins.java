@@ -1,6 +1,6 @@
 package com.learning.algo;
 
-public class SoItBeginsQ1 {
+public class Q1SoItBegins {
 	
 	public int summation(int num,int factor){
 		
@@ -12,7 +12,7 @@ public class SoItBeginsQ1 {
 	
 	public static void main(String[] args) {
 		
-		SoItBeginsQ1 begins = new SoItBeginsQ1();
+		Q1SoItBegins begins = new Q1SoItBegins();
 		
 		int result = begins.summation(1000, 3)+begins.summation(1000, 5)-begins.summation(1000, 15);
 		System.out.println(result);

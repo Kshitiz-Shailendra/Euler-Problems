@@ -1,6 +1,6 @@
 package com.learning.algo;
 
-public class SmallestMultipleQ5 {
+public class Q5SmallestMultiple {
 
 	private long lcm(long res,long b){
 		
@@ -45,7 +45,7 @@ public class SmallestMultipleQ5 {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		SmallestMultipleQ5 mul = new SmallestMultipleQ5();
+		Q5SmallestMultiple mul = new Q5SmallestMultiple();
 		
 		System.out.println(mul.smallestLcm());
 	}

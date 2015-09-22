@@ -1,6 +1,6 @@
 package com.learning.algo;
 
-public class PythagoreanTriplesQ9 {
+public class Q9PythagoreanTriples {
 
 	public long specialTriples(){
 		long triplesProduct = 0;
@@ -31,7 +31,7 @@ public class PythagoreanTriplesQ9 {
 	}
 	
 	public static void main(String[] args) {
-		PythagoreanTriplesQ9 triples = new PythagoreanTriplesQ9();
+		Q9PythagoreanTriples triples = new Q9PythagoreanTriples();
 		System.out.println(triples.specialTriples());
 
 	}
