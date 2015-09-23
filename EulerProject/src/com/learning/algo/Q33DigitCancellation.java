@@ -3,48 +3,96 @@ package com.learning.algo;
 public class Q33DigitCancellation {
 	
 	
-	public void findRowsCols(int num){
-		int [][]mat = getMatrix(),row = new int[2][10],col=new int[2][9];;
-		int []digitArr = new int[2];
-		int i=1;
-		while(num>0){
-			digitArr[i] = num%10;
-			row[i] = mat[digitArr[i]-1];
-			i--;
-			num = num/10;
-		}
-		for(int j=0;j<2;j++){
-			for(int k=0;k<9;k++){
-				col[j][k] = mat[k][digitArr[j]];
+	public int findRowsCols(){
+		
+		int []product  = {1,1};
+		int gcd = 0;
+		for(int loop = 12; loop<100;loop++){
+				
+			for(int j=loop+1;j<100;j++){
+				gcd = gcd(j,loop);
+				if(loop%10!=0 && loop%11!=0 && (loop*j) % 100!=0 && !revEqual(loop,j) && gcd>1 ){
+					
+					int i2 = 1,count2 =j,count1=loop;
+					int []digitArr = new int[2],digitArr2 = new int[2],reducedFrac=new int[2],wrongReducedFrac = new int[2];
+					while(count2>0){
+						digitArr[i2] = count1%10;
+						digitArr2[i2] = count2%10;
+						count1 = count1/10; 
+						count2 = count2/10;
+						i2--;
+					}
+					reducedFrac[0]=loop/gcd;
+					reducedFrac[1]=j/gcd;
+					if(digitArr[0]!=digitArr2[0] && digitArr[0]!=digitArr2[1] && digitArr[1]!=digitArr2[0] && digitArr[1]!=digitArr2[1])
+						continue;
+					
+					if(digitArr[0]==digitArr2[0]){
+						wrongReducedFrac[0] = digitArr[1];
+						wrongReducedFrac[1] = digitArr2[1];
+					}else if(digitArr[0]==digitArr2[1]){
+						wrongReducedFrac[0] = digitArr[1];
+						wrongReducedFrac[1] = digitArr2[0];
+					}else if(digitArr[1]==digitArr2[0]){
+						wrongReducedFrac[0] = digitArr[0];
+						wrongReducedFrac[1] = digitArr2[1];
+					}else{
+						wrongReducedFrac[0] = digitArr[0];
+						wrongReducedFrac[1] = digitArr2[0];
+					}
+					
+					
+					int gcd2 = gcd(wrongReducedFrac[1],wrongReducedFrac[0]);
+					wrongReducedFrac[0] = wrongReducedFrac[0]/gcd2;
+					wrongReducedFrac[1] = wrongReducedFrac[1]/gcd2;	
+					
+					
+					if(reducedFrac[0]==wrongReducedFrac[0]&&reducedFrac[1]==wrongReducedFrac[1]){
+						product[0] = product[0]*reducedFrac[0];
+						product[1] = product[1]*reducedFrac[1];
+						System.out.println("loop= "+loop+" j= "+j);
+					}
+						
+					//System.out.println("loop= "+loop+" j= "+j);
+				}
 			}
+			
+			
+			
+			
+			
 		}
+		return product[1]/product[0];
 	}
 	
 	
-	public int[][] getMatrix(){
-		int [][]mat = new int[9][10];
-		int count = 10;
-		for(int i=0;i<9;i++){
-			for(int j=0;j<10;j++){
-				mat[i][j] = count++;
-			}
+	private boolean revEqual(int loop, int j) {
+		int c=0;
+		while(j>0){
+			c =c*10+ j%10;
+			j=j/10;
+		}
+		return loop==c;
+	}
+
+
+	private int gcd(int a, int b) {
+		int gcd=0;
+		while(b>0){
+			gcd = a%b;
+			a=b;
+			b=gcd;
 		}
 		
-		return mat;
+		return a;
 	}
-	
+
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
 		Q33DigitCancellation digit = new Q33DigitCancellation();
 		
-		/*int [][]mat = digit.getMatrix();
-		for(int i=0;i<9;i++){
-			for(int j=0;j<10;j++){
-				System.out.print(mat[i][j]+"\t");
-			}
-			System.out.println();
-		}*/
-		digit.findRowsCols(23);
+		
+		System.out.println(digit.findRowsCols());
 		
 
 		long stop = System.currentTimeMillis();
